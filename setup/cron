@@ -1,0 +1,12 @@
+# For more information see the manual pages of crontab(5) and cron(8)
+# *	*	*	*	*	sh /home/pi/services/telemetry/temperature.sh
+# *	1	* *	*	cp /home/pi/.de-books/dedb.db /home/pi/.de-books/dedb.$(date +%F).db
+# *	*	*	*	*	hostname -I | awk '{print $1}' | xargs -I '{}' python /home/pi/projects/lcd/lcd.py '{}'
+#
+# m h  dom mon dow   command
+
+*/15	*	 *	 *	 *	 run-parts /etc/periodic/15min
+0	*	 *	 *	 *	 run-parts /etc/periodic/hourly
+0	2	 *	 *	 *	 run-parts /etc/periodic/daily
+0	3	 *	 *	 6	 run-parts /etc/periodic/weekly
+0	5	 1	 *	 *	 run-parts /etc/periodic/monthly

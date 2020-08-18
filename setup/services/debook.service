@@ -1,0 +1,12 @@
+[Unit]
+Description=Debook Server
+After=network.target
+
+[Service]
+User=mark
+WorkingDirectory=/home/mark
+ExecStart=/home/mark/projects/de-books/de-books
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
