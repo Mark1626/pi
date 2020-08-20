@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ifconfig wlan0 | awk '/inet/{printf("IP is : %s\n", $2)}' | head -1 | xargs -I '{}' /home/mark/projects/gpio/lcd/write_to_lcd '{}'
