@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mv ~/.telemetry/temperature.log ~/.telemetry/temperature-$(date +%F).log
